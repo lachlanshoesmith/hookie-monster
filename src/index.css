@@ -1,0 +1,13 @@
+:root {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: url('./assets/background.jpg');
+  background-position-y: 40%;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+}

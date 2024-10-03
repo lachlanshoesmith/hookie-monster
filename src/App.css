@@ -112,3 +112,39 @@ p {
     animation: spin infinite 5s linear;
   }
 }
+
+@media screen and (max-width: 800px) {
+  #root {
+    flex-direction: column;
+  }
+  .left,
+  .middle {
+    width: 100%;
+  }
+  .left {
+    margin-top: 32px;
+    height: 60vh;
+  }
+  .middle {
+    height: 30vh;
+  }
+  .middle p {
+    display: none;
+  }
+  .cookie-monster {
+    margin: 32px auto;
+  }
+  .cookie {
+    width: 80px;
+    height: 80px;
+  }
+  .cookie:hover {
+    width: 96px;
+    height: 96px;
+  }
+  .right {
+    height: 110vh;
+    width: calc(100% - 32px);
+    padding-bottom: 32px;
+  }
+}

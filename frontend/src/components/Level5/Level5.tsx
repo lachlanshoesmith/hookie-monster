@@ -10,7 +10,7 @@ function Level5() {
   const [recipe, setRecipe] = useState<Recipe>({
     error: 'no recipe yet',
   });
-  const [mode, setMode] = useState('count-von-counterexample-mode');
+  const [mode, setMode] = useState('hookie-monster-mode');
 
   useEffect(() => {
     fetch(

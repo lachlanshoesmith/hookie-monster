@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import '../App.css';
-import { CookieRecipe, Recipe } from './CookieRecipe';
+import '../../App.css';
+import { CookieRecipe, Recipe } from '../CookieRecipe';
+import Character from './Character';
 
 function Level4() {
   const [cookiesAte, setCookiesAte] = useState(0);
@@ -8,6 +9,7 @@ function Level4() {
   const [recipe, setRecipe] = useState<Recipe>({
     error: 'no recipe yet',
   });
+  const [mode, setMode] = useState('hookie-monster-mode');
 
   useEffect(() => {
     fetch(
@@ -23,7 +25,16 @@ function Level4() {
   return (
     <>
       <section className="left level4">
-        <div className="mode-switcher hookie-monster-mode"></div>
+        <div
+          onClick={() => {
+            if (mode === 'count-von-counterexample-mode') {
+              setMode('hookie-monster-mode');
+            } else {
+              setMode('count-von-counterexample-mode');
+            }
+          }}
+          className={'mode-switcher ' + mode}
+        ></div>
         <p>
           {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
           <br />
@@ -37,7 +48,7 @@ function Level4() {
             Show cookie recipe
           </button>
         </p>
-        <div className="cookie-monster level4"></div>
+        <Character />
       </section>
       <section className="middle">
         <p>i yearn for cookies... please feed me...</p>

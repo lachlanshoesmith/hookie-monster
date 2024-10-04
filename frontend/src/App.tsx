@@ -62,7 +62,7 @@ function App() {
       todos: [
         <span>
           How can we implement a <code>useContext</code> hook to switch between
-          the Count von CounterExample and Hookie Monster modes?'
+          the Count von CounterExample and Hookie Monster modes?
         </span>,
       ],
     },

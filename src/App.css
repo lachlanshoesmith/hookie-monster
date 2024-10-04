@@ -94,12 +94,18 @@ p {
   margin-top: auto;
 }
 
-.levels div {
+.level-link {
   width: 24px;
   height: 24px;
   background: #888;
   border-radius: 64px;
   background: lightgreen;
+  transition: 0.2s background linear;
+  will-change: background;
+}
+
+.level-link:hover {
+  background: green;
 }
 
 .levels .active {

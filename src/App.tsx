@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   const levels = [
     {
       features: [
-        'None! As of now, everything in this app could be easily implemented using vanilla JS.',
+        'None! As of now, everything in this app could be easily implemented without a line of React, let alone JavaScript.',
       ],
       todos: [
         'Which React hook could I use to keep track of how many cookies Cookie Monster is eating?',
@@ -18,7 +18,7 @@ function App() {
       features: [
         'The useState hook to track the amount of cookies Cookie Monster has eaten.',
         'The useEffect hook as well as another bit of state to detect when 100 cookies have been eaten... but is it necessary?',
-        "A ternary operator based on the state to determine whether Cookie Monster says 'cookie' or 'cookies' based on the amount of cookies he's eaten",
+        "A ternary operator based on the state to determine whether Cookie Monster says 'cookie' or 'cookies' based on the amount of cookies he's eaten.",
       ],
       todos: ['Can we improve the too-many-cookies system?'],
     },
@@ -52,7 +52,11 @@ function App() {
         </article>
         <section className="levels">
           {[0, 1, 2].map((i) => (
-            <div key={i} className={i === level ? 'active' : ''} />
+            <Link
+              to={`level${i + 1}`}
+              key={i}
+              className={i === level ? 'active level-link' : 'level-link'}
+            />
           ))}
         </section>
       </main>

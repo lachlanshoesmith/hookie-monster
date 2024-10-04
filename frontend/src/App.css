@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 #root {
   margin: 0;
   width: 100vw;
@@ -7,7 +9,7 @@
 
 #root,
 button {
-  font-family: serif;
+  font-family: 'Noto Serif', serif;
 }
 
 .mode-switcher {
@@ -101,7 +103,7 @@ button {
 
 .right,
 .cookie-recipe {
-  background: hsla(0, 0%, 0%, 85%);
+  background: hsla(0, 0%, 90%, 85%);
   width: 30vw;
   text-align: center;
   padding: 16px;
@@ -149,17 +151,19 @@ p {
 
 .right h1,
 .right h2 {
-  color: white;
+  color: black;
 }
 
-.right p {
+.right p,
+li {
   background: none;
-  color: #dbdbdb;
+  color: #111;
+  line-height: 2;
+  font-weight: 500;
 }
 
 .right li {
   text-align: left;
-  color: #dbdbdb;
 }
 
 .levels {
@@ -174,18 +178,18 @@ p {
   height: 24px;
   background: #888;
   border-radius: 64px;
-  background: lightgreen;
+  background: green;
   transition: 0.2s background linear;
   will-change: background;
 }
 
 .level-link:hover {
-  background: green;
+  background: darkgreen;
 }
 
 .levels .active {
-  background: darkgreen;
-  outline: lightgreen 4px solid;
+  background: lightgreen;
+  outline: darkgreen 4px solid;
 }
 
 .show-recipe-button {
@@ -200,6 +204,13 @@ p {
 .show-recipe-button:hover {
   background: blue;
   cursor: pointer;
+}
+
+code {
+  background: hsl(120, 73%, 75%);
+  padding: 4px;
+  font-weight: bold;
+  color: black;
 }
 
 @keyframes spin {

@@ -55,6 +55,11 @@
   padding: 16px;
 }
 
+.right article {
+  overflow-y: auto;
+  height: 80vh;
+}
+
 p {
   margin: 0 auto;
   padding: 16px;
@@ -82,7 +87,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: auto;
 }
 
 .levels div {

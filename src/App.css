@@ -9,7 +9,7 @@
   background: url('./assets/cookiemonster.png');
   width: 300px;
   height: 300px;
-  background-size: 300px;
+  background-size: cover;
   margin-top: 64px;
 }
 
@@ -17,7 +17,6 @@
   background: url('./assets/cookie.png');
   width: 128px;
   height: 128px;
-  margin: 48px;
   border: none;
   background-size: cover;
   transition: 0.2s width, 0.2s height;
@@ -48,6 +47,10 @@
   width: 40vw;
 }
 
+.middle p {
+  margin-bottom: 24px;
+}
+
 .right {
   background: hsla(0, 0%, 0%, 85%);
   width: 30vw;
@@ -58,6 +61,7 @@
 .right article {
   overflow-y: auto;
   height: 80vh;
+  margin-bottom: 32px;
 }
 
 p {
@@ -138,10 +142,13 @@ p {
   }
   .cookie-monster {
     margin: 32px auto;
+    width: 200px;
+    height: 200px;
   }
   .cookie {
     width: 80px;
     height: 80px;
+    background-size: cover;
   }
   .cookie:hover {
     width: 96px;
@@ -151,5 +158,6 @@ p {
     height: 110vh;
     width: calc(100% - 32px);
     padding-bottom: 32px;
+    margin-top: 32px;
   }
 }

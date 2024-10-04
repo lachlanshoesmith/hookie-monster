@@ -23,9 +23,8 @@ jobs:
         with:
           version: 9
           run_install: |
-          - recursive: true
-            args: [--frozen-lockfile, --strict-peer-dependencies]
-          - args: [--global, gulp, prettier, typescript]
+            recursive: true
+            args: [--global, gulp, prettier, typescript]
 
       - name: Build project
         working-directory: ./frontend

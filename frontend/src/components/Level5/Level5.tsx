@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../App.css';
 import { CookieRecipe, Recipe } from '../CookieRecipe';
 import { ModeContext } from './ModeContext';

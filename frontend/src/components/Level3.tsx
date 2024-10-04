@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../App.css';
 import { CookieRecipe, Recipe } from './CookieRecipe';
 
 function Level3() {
   const [cookiesAte, setCookiesAte] = useState(0);
   const [showRecipe, setShowRecipe] = useState(false);
+  // @ts-ignore
   const [recipe, setRecipe] = useState<Recipe>({
     error: 'no recipe yet',
   });

@@ -6,7 +6,6 @@
 }
 
 .mode-switcher {
-  background: url('./assets/count-von-counterexample.png');
   width: 101px;
   height: 56px;
   background-size: cover;
@@ -28,8 +27,13 @@
   margin-top: 32px;
 }
 
-.mode-switcher.cookie-monster-mode {
+.mode-switcher.count-von-counterexample-mode {
   background: url('./assets/cookiemonster.png');
+  background-size: cover;
+}
+
+.mode-switcher.hookie-monster-mode {
+  background: url('./assets/count-von-counterexample.png');
   background-size: cover;
 }
 

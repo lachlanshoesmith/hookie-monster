@@ -10,31 +10,36 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./frontend
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          working-directory: ./frontend
 
       - name: Setup pnpm and install dependencies
-        working-directory: ./frontend
         uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: |
             recursive: true
+            working-directory: ./frontend
             args: [--global, gulp, prettier, typescript]
 
       - name: Build project
-        working-directory: ./frontend
         run: pnpm run build --base=/hookie-monster/
 
       - name: Upload production-ready build files
-        working-directory: ./frontend
         uses: actions/upload-artifact@v3
         with:
           name: production-files
+          working-directory: ./frontend
           path: ./dist
 
   deploy:
@@ -48,10 +53,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
+          working-directory: ./frontend
           path: ./dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./frontend
           publish_dir: ./dist

@@ -10,6 +10,11 @@
   width: 300px;
   height: 300px;
   background-size: cover;
+  margin-top: 32px;
+}
+
+.cookie-monster.level4 {
+  margin-top: 0px;
 }
 
 .count-von-counterexample {
@@ -50,10 +55,15 @@
 
 .left {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   width: 30vw;
+  align-self: flex-end;
+}
+
+.left.level4 {
+  align-self: flex-start;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -158,6 +168,10 @@ p {
     margin-top: 32px;
     height: 60vh;
   }
+  .left.level4 {
+    margin-top: 0px;
+    gap: 32px;
+  }
   .middle {
     height: 30vh;
   }
@@ -183,5 +197,8 @@ p {
     width: calc(100% - 32px);
     padding-bottom: 32px;
     margin-top: 32px;
+  }
+  .right article {
+    height: 60vh;
   }
 }

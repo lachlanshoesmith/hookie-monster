@@ -7,7 +7,7 @@ function Level4() {
 
   return (
     <>
-      <section className="left">
+      <section className="left level4">
         <div className="count-von-counterexample"></div>
         <p>
           {enough ? (
@@ -18,9 +18,10 @@ function Level4() {
             </span>
           )}
         </p>
-        <div className="cookie-monster"></div>
+        <div className="cookie-monster level4"></div>
       </section>
       <section className="middle">
+        {!enough ? <p>i yearn for cookies... please feed me...</p> : <></>}
         <button
           onClick={() => {
             if (cookiesAte + 1 === 100) {

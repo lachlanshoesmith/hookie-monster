@@ -19,15 +19,24 @@ function App() {
     },
     {
       features: [
-        'The useState hook to track the amount of cookies Hookie Monster has eaten.',
-        'The useEffect hook as well as another bit of state to detect when 20 cookies have been eaten... but is it necessary?',
+        <span>
+          The <code>useState</code> hook to track the amount of cookies Hookie
+          Monster has eaten.
+        </span>,
+        <span>
+          The <code>useEffect</code> hook as well as another bit of state to
+          detect when 20 cookies have been eaten... but is it necessary?
+        </span>,
         "A ternary operator based on the state to determine whether Hookie Monster says 'cookie' or 'cookies'.",
       ],
       todos: ['Can we improve the too-many-cookies system?'],
     },
     {
       features: [
-        'The useState hook to track the amount of cookies Hookie Monster has eaten.',
+        <span>
+          The <code>useState</code> hook to track the amount of cookies Hookie
+          Monster has eaten.
+        </span>,
         "A ternary operator based on the state to determine whether Hookie Monster says 'cookie' or 'cookies'.",
         'Hookie Monster shares his secret cookie recipe when you feed him 100 cookies. The recipe is grabbed from an API endpoint - but how?!',
       ],
@@ -49,11 +58,17 @@ function App() {
     },
     {
       features: [
-        'The useState hook to track the amount of cookies Hookie Monster has eaten.',
+        <span>
+          The <code>useState</code> hook to track the amount of cookies Hookie
+          Monster has eaten.
+        </span>,
         "A ternary operator based on the state to determine whether Hookie Monster says 'cookie' or 'cookies'.",
         'Hookie Monster shares his secret cookie recipe when you feed him 100 cookies. The recipe is grabbed from an API endpoint with `fetch` inside a useEffect hook.',
         'A button at the top of the screen lets the user switch between Count von CounterExample and Hookie Monster modes.',
-        'The useContext hook to switch between the Count von CounterExample and Hookie Monster modes.',
+        <span>
+          The <code>useContext</code> hook to switch between the Count von
+          CounterExample and Hookie Monster modes.
+        </span>,
       ],
       todos: ["None - we're done here! 🥳🍪"],
     },
@@ -71,8 +86,8 @@ function App() {
               React features to work:
             </p>
             <ul>
-              {levels[level].features.map((feature) => (
-                <li key={feature}>{feature}</li>
+              {levels[level].features.map((feature, index) => (
+                <li key={index}>{feature}</li>
               ))}
             </ul>
           </section>

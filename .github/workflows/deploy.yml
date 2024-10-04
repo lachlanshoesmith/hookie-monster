@@ -20,8 +20,6 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          working-directory: ./frontend
 
       - name: Setup pnpm and install dependencies
         uses: pnpm/action-setup@v4
@@ -29,7 +27,6 @@ jobs:
           version: 9
           run_install: |
             recursive: true
-            working-directory: ./frontend
             args: [--global, gulp, prettier, typescript]
 
       - name: Build project
@@ -39,8 +36,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          working-directory: ./frontend
-          path: ./dist
+          path: ./frontend/dist
 
   deploy:
     name: Deploy
@@ -53,12 +49,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          working-directory: ./frontend
-          path: ./dist
+          path: ./frontend/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: ./frontend
-          publish_dir: ./dist
+          publish_dir: ./frontend/dist

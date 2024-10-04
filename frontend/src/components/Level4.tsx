@@ -1,37 +1,43 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
+import { CookieRecipe, Recipe } from './CookieRecipe';
 
 function Level4() {
   const [cookiesAte, setCookiesAte] = useState(0);
-  const [enough, setEnough] = useState(false);
+  const [showRecipe, setShowRecipe] = useState(false);
+  const [recipe, setRecipe] = useState<Recipe>({
+    error: 'no recipe yet',
+  });
 
   return (
     <>
       <section className="left level4">
-        <div className="count-von-counterexample"></div>
+        <div className="mode-switcher cookie-monster-mode"></div>
         <p>
-          {enough ? (
-            <span className="enough">I'M GONNA THROW UP!! ENOUGH!!!</span>
-          ) : (
-            <span>
-              {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
-            </span>
-          )}
+          {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
+          <br />
+          <br />
+          <button
+            className="show-recipe-button"
+            onClick={() => {
+              setShowRecipe(!showRecipe);
+            }}
+          >
+            Show cookie recipe
+          </button>
         </p>
-        <div className="cookie-monster level4"></div>
+        <div className="cookie-monster level4 count-von-counterexample-mode"></div>
       </section>
       <section className="middle">
-        {!enough ? <p>i yearn for cookies... please feed me...</p> : <></>}
+        <p>i yearn for cookies... please feed me...</p>
         <button
           onClick={() => {
-            if (cookiesAte + 1 === 100) {
-              setEnough(true);
-            }
             setCookiesAte(cookiesAte + 1);
           }}
           className="cookie"
         ></button>
       </section>
+      {showRecipe ? <CookieRecipe recipe={recipe} /> : <></>}
     </>
   );
 }

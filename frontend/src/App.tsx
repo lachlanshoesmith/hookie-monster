@@ -17,7 +17,7 @@ function App() {
     {
       features: [
         'The useState hook to track the amount of cookies Hookie Monster has eaten.',
-        'The useEffect hook as well as another bit of state to detect when 100 cookies have been eaten... but is it necessary?',
+        'The useEffect hook as well as another bit of state to detect when 20 cookies have been eaten... but is it necessary?',
         "A ternary operator based on the state to determine whether Hookie Monster says 'cookie' or 'cookies' based on the amount of cookies he's eaten.",
       ],
       todos: ['Can we improve the too-many-cookies system?'],
@@ -38,9 +38,10 @@ function App() {
         'The useState hook to track the amount of cookies Hookie Monster has eaten.',
         "A ternary operator based on the state to determine whether Hookie Monster says 'cookie' or 'cookies' based on the amount of cookies he's eaten.",
         'Hookie Monster shares his secret cookie recipe when you feed him 100 cookies. The recipe is grabbed from an API endpoint inside a useEffect hook.',
+        'A button at the top of the screen lets the user switch between Count von CounterExample and Hookie Monster modes.',
       ],
       todos: [
-        'How can we implement a useContext hook to switch between and Hookie Monster and Count von CounterExample mode?',
+        'How can we implement a useContext hook to switch between the Count von CounterExample and Hookie Monster modes?',
       ],
     },
   ];

@@ -1,15 +1,33 @@
-type CookieRecipe = {
+export type Recipe = {
   error?: string;
   recipe?: string[];
 };
 
-function CookieRecipe(props: CookieRecipe) {
+export type CookieRecipeProps = {
+  recipe: Recipe;
+};
+
+const renderLine = (line: String) => {
+  if (line.startsWith('##')) {
+    return <h2>{line.slice(3)}</h2>;
+  } else if (line.startsWith('#')) {
+    return <h1>{line.slice(2)}</h1>;
+  } else if (line.startsWith('*') || line.startsWith('-')) {
+    return <li>{line.slice(1)}</li>;
+  } else {
+    return <p>{line}</p>;
+  }
+};
+
+export function CookieRecipe(props: CookieRecipeProps) {
   return (
     <div className="cookie-recipe">
-      {props.error && <p className="error">{props.error}</p>}
-      {props.recipe && <p>{props.recipe.join('\n')}</p>}
+      <h1>The Secret Recipe</h1>
+      <article>
+        {props.recipe.error && <p className="error">{props.recipe.error}</p>}
+        {props.recipe.recipe &&
+          props.recipe.recipe.map((line) => renderLine(line))}
+      </article>
     </div>
   );
 }
-
-export default CookieRecipe;

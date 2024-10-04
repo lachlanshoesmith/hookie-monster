@@ -5,19 +5,7 @@
   display: flex;
 }
 
-.cookie-monster {
-  background: url('./assets/cookiemonster.png');
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  margin-top: 32px;
-}
-
-.cookie-monster.level4 {
-  margin-top: 0px;
-}
-
-.count-von-counterexample {
+.mode-switcher {
   background: url('./assets/count-von-counterexample.png');
   width: 101px;
   height: 56px;
@@ -26,10 +14,33 @@
   transition: 0.1s width linear, 0.1s height linear;
 }
 
-.count-von-counterexample:hover {
+.mode-switcher:hover {
   width: 112px;
   height: 66px;
   cursor: pointer;
+}
+
+.cookie-monster {
+  background: url('./assets/cookiemonster.png');
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  margin-top: 32px;
+}
+
+.mode-switcher.cookie-monster-mode {
+  background: url('./assets/cookiemonster.png');
+  background-size: cover;
+}
+
+.cookie-monster.level4 {
+  margin-top: 0px;
+}
+
+.cookie-monster.count-von-counterexample-mode {
+  background: url('./assets/count-von-counterexample.png');
+  background-size: cover;
+  background-position-x: -100px;
 }
 
 .cookie {
@@ -79,7 +90,8 @@
   margin-bottom: 24px;
 }
 
-.right {
+.right,
+.cookie-recipe {
   background: hsla(0, 0%, 0%, 85%);
   width: 30vw;
   text-align: center;
@@ -90,6 +102,31 @@
   overflow-y: auto;
   height: 80vh;
   margin-bottom: 32px;
+}
+
+.cookie-recipe article {
+  overflow-y: auto;
+  width: 90%;
+  height: 60vh;
+}
+
+.cookie-recipe article p,
+.cookie-recipe article li {
+  background: none;
+  margin: 10px;
+  text-align: left;
+}
+
+.cookie-recipe article li {
+  margin-left: 16px;
+}
+
+.cookie-recipe {
+  background: white;
+  color: black;
+  position: absolute;
+  left: 65vw;
+  height: calc(100vh - 32px);
 }
 
 p {
@@ -214,5 +251,10 @@ p {
   }
   .right article {
     height: 60vh;
+  }
+  .cookie-recipe {
+    left: 0;
+    width: calc(100vw - 32px);
+    top: 30vh;
   }
 }

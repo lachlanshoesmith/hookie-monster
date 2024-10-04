@@ -1,26 +1,42 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../App.css';
+import { CookieRecipe, Recipe } from './CookieRecipe';
 
 function Level3() {
   const [cookiesAte, setCookiesAte] = useState(0);
   const [showRecipe, setShowRecipe] = useState(false);
+  const [recipe, setRecipe] = useState<Recipe>({
+    error: 'no recipe yet',
+  });
+
+  /*
+  TODO: use this fetch request
+  fetch(
+    'http://localhost:3000/secret-recipe?' +
+      new URLSearchParams({
+        cookies: cookiesAte.toString(),
+      })
+  ).then((res) => {
+    res.json().then((json) => setRecipe(json));
+  });
+  */
 
   return (
     <>
       <section className="left">
         <p>
-          <span>
-            {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
-          </span>
+          {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
+          <br />
+          <br />
+          <button
+            className="show-recipe-button"
+            onClick={() => {
+              setShowRecipe(!showRecipe);
+            }}
+          >
+            Show cookie recipe
+          </button>
         </p>
-        <button
-          className="show-recipe-button"
-          onClick={() => {
-            setShowRecipe(!showRecipe);
-          }}
-        >
-          Show cookie recipe
-        </button>
         <div className="cookie-monster"></div>
       </section>
       <section className="middle">
@@ -32,6 +48,7 @@ function Level3() {
           className="cookie"
         ></button>
       </section>
+      {showRecipe ? <CookieRecipe recipe={recipe} /> : <></>}
     </>
   );
 }

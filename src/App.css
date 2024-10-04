@@ -10,7 +10,21 @@
   width: 300px;
   height: 300px;
   background-size: cover;
-  margin-top: 64px;
+}
+
+.count-von-counterexample {
+  background: url('./assets/count-von-counterexample.png');
+  width: 101px;
+  height: 56px;
+  background-size: cover;
+  rotate: 180deg;
+  transition: 0.1s width linear, 0.1s height linear;
+}
+
+.count-von-counterexample:hover {
+  width: 112px;
+  height: 66px;
+  cursor: pointer;
 }
 
 .cookie {
@@ -35,8 +49,12 @@
 }
 
 .left {
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 30vw;
+  height: 100%;
 }
 
 .middle {

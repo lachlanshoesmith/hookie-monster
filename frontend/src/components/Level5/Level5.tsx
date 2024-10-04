@@ -14,7 +14,7 @@ function Level5() {
 
   useEffect(() => {
     fetch(
-      'http://localhost:3000/secret-recipe?' +
+      'https://hookie-monster.fly.dev/secret-recipe?' +
         new URLSearchParams({
           cookies: cookiesAte.toString(),
         })

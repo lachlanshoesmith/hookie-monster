@@ -13,7 +13,7 @@ function Level3() {
   /*
   TODO: use this fetch request
   fetch(
-    'http://localhost:3000/secret-recipe?' +
+    'https://hookie-monster.fly.dev/secret-recipe?' +
       new URLSearchParams({
         cookies: cookiesAte.toString(),
       })

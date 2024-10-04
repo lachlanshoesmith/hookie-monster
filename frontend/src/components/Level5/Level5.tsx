@@ -62,7 +62,7 @@ function Level5() {
           className="cookie"
         ></button>
       </section>
-      {showRecipe ? <CookieRecipe recipe={recipe} /> : <></>}
+      {showRecipe && <CookieRecipe recipe={recipe} />}
     </>
   );
 }

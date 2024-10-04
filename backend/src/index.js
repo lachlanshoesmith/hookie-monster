@@ -31,12 +31,7 @@ const recipe = {
 };
 
 app.use(function (_req, res, next) {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'http://localhost:5173',
-    'https://hookie-monster.pages.dev',
-    'https://hookie-monster.lachlan.codes'
-  );
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader(

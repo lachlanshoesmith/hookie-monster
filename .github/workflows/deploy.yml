@@ -17,13 +17,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+      - name: Setup pnpm and install dependencies
+        working-directory: ./frontend
+        uses: pnpm/action-setup@v4
+          with:
+            version: 9
+            run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+            - args: [--global, gulp, prettier, typescript]
 
       - name: Build project
-        run: npm run build --base=/hookie-monster/
+        working-directory: ./frontend
+        run: pnpm run build --base=/hookie-monster/
 
       - name: Upload production-ready build files
+        working-directory: ./frontend
         uses: actions/upload-artifact@v3
         with:
           name: production-files

@@ -30,6 +30,7 @@ function App() {
       ],
       todos: [
         "Could we repurpose a hook that we recently removed to help us find Hookie Monster's secret recipe?",
+        'If so, what would this hook react to?',
       ],
     },
     {

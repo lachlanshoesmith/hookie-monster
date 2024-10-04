@@ -141,6 +141,20 @@ p {
   outline: lightgreen 4px solid;
 }
 
+.show-recipe-button {
+  background: darkblue;
+  color: white;
+  border: none;
+  transition: background 0.2s linear;
+  will-change: background;
+  padding: 8px;
+}
+
+.show-recipe-button:hover {
+  background: blue;
+  cursor: pointer;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

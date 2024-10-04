@@ -5,6 +5,11 @@
   display: flex;
 }
 
+#root,
+button {
+  font-family: serif;
+}
+
 .mode-switcher {
   width: 101px;
   height: 56px;

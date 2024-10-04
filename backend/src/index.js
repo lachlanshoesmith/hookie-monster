@@ -30,6 +30,23 @@ const recipe = {
   ],
 };
 
+app.use(function (_req, res, next) {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'http://localhost:5173',
+    'https://hookie-monster.pages.dev',
+    'https://hookie-monster.lachlan.codes'
+  );
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-Requested-With,content-type'
+  );
+
+  next();
+});
+
 app.get('/secret-recipe', (req, res) => {
   if (!req.query.cookies || parseInt(req.query.cookies) < 100) {
     res.status(400).send({

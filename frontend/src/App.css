@@ -106,6 +106,7 @@
   overflow-y: auto;
   height: 80vh;
   margin-bottom: 32px;
+  padding-right: 16px;
 }
 
 .cookie-recipe article {

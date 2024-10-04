@@ -15,7 +15,7 @@ const recipe = {
     '- 1/2 cup of `useRef` butter',
     '- 1 cup of recursive chocolate `map()` chips',
     '## Instructions:',
-    '*1. Initialize new project with `create-react-app cookie-monster-cookies',
+    '*1. Initialize new project with `create-react-app cookie-monster-cookies`',
     '*2. `import` all ingredients into large `<Bowl />` component',
     '*3. Mix `useState` flour and `useEffect` sugar until no errors in console',
     '*4. Add `props` one at a time, mixing after each addition',
@@ -26,13 +26,14 @@ const recipe = {
     '*9. `render()` in preheated 350°F oven for 12-15 minutes',
     '*10. Allow cookies to reach `lazy()` loading state before consuming',
     '## WARNING: ME MUST WARN YOU... THESE COOKIES CAUSE EXTREME DEPENDENCY ON REACT HOOKS! NOM NOM NOM! ME ALREADY ADDICTED! COOKIE GOOD FOR SOUL, BAD FOR TYPESCRIPT!',
+    '(thanks for writing this, claude)',
   ],
 };
 
 app.get('/secret-recipe', (req, res) => {
-  if (!req.query.cookies || req.query.cookies < 100) {
+  if (!req.query.cookies || parseInt(req.query.cookies) < 100) {
     res.status(400).send({
-      error: 'HOOKIE MONSTER NOT FULL! OR YOU DIDNT GIVE ME COOKIES AT ALL...',
+      error: 'HOOKIE MONSTER STILL HUNGRY!',
     });
   } else {
     res.status(200).send(recipe);

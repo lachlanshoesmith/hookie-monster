@@ -2,7 +2,8 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const level = parseInt(useLocation().pathname.slice(-1));
+  let level = parseInt(useLocation().pathname.slice(-1));
+  if (isNaN(level)) level = 0;
 
   const levels = [
     {

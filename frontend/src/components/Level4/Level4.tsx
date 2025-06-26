@@ -9,6 +9,12 @@ function Level4() {
   const [recipe, setRecipe] = useState<Recipe>({
     error: 'no recipe yet',
   });
+  {
+    // TODO: this is our reactive state, how can we
+    //       tie it to some context?
+    //       don't forget to createContext somewhere
+    //       if you haven't!
+  }
   const [mode, setMode] = useState('hookie-monster-mode');
 
   useEffect(() => {
@@ -24,7 +30,7 @@ function Level4() {
 
   return (
     <>
-      <section className="left level4">
+      <section className='left level4'>
         <div
           onClick={() => {
             if (mode === 'count-von-counterexample-mode') {
@@ -40,7 +46,7 @@ function Level4() {
           <br />
           <br />
           <button
-            className="show-recipe-button"
+            className='show-recipe-button'
             onClick={() => {
               setShowRecipe(!showRecipe);
             }}
@@ -48,15 +54,18 @@ function Level4() {
             Show cookie recipe
           </button>
         </p>
+        {
+          // TODO: provide the context here!
+        }
         <Character />
       </section>
-      <section className="middle">
+      <section className='middle'>
         <p>i yearn for cookies... please feed me...</p>
         <button
           onClick={() => {
             setCookiesAte(cookiesAte + 1);
           }}
-          className="cookie"
+          className='cookie'
         ></button>
       </section>
       {showRecipe && <CookieRecipe recipe={recipe} />}

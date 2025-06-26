@@ -13,25 +13,25 @@ function Level2() {
 
   return (
     <>
-      <section className="left">
+      <section className='left'>
         <p>
           {enough ? (
-            <span className="enough">I'M GONNA THROW UP!! ENOUGH!!!</span>
+            <span className='enough'>I'M GONNA THROW UP!! ENOUGH!!!</span>
           ) : (
             <span>
               {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
             </span>
           )}
         </p>
-        <div className="cookie-monster"></div>
+        <div className='hookie-monster'></div>
       </section>
-      <section className="middle">
+      <section className='middle'>
         {!enough ? <p>i yearn for cookies... please feed me...</p> : <></>}
         <button
           onClick={() => {
             setCookiesAte(cookiesAte + 1);
           }}
-          className="cookie"
+          className='cookie'
         ></button>
       </section>
     </>

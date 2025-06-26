@@ -26,7 +26,7 @@ button {
   cursor: pointer;
 }
 
-.cookie-monster {
+.hookie-monster {
   background: url('./assets/cookiemonster.png');
   width: 300px;
   height: 300px;
@@ -44,11 +44,11 @@ button {
   background-size: cover;
 }
 
-.cookie-monster.level4 {
+.hookie-monster.level4 {
   margin-top: 0px;
 }
 
-.cookie-monster.count-von-counterexample-mode {
+.hookie-monster.count-von-counterexample-mode {
   background: url('./assets/count-von-counterexample.png');
   background-size: cover;
   background-position-x: -100px;
@@ -250,7 +250,7 @@ code {
   .middle p {
     display: none;
   }
-  .cookie-monster {
+  .hookie-monster {
     margin: 32px auto;
     width: 200px;
     height: 200px;

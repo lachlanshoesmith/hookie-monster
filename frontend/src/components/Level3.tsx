@@ -24,13 +24,13 @@ function Level3() {
 
   return (
     <>
-      <section className="left">
+      <section className='left'>
         <p>
           {cookiesAte} cookie{cookiesAte === 1 ? '' : 's'} is not enough
           <br />
           <br />
           <button
-            className="show-recipe-button"
+            className='show-recipe-button'
             onClick={() => {
               setShowRecipe(!showRecipe);
             }}
@@ -38,15 +38,15 @@ function Level3() {
             Show cookie recipe
           </button>
         </p>
-        <div className="cookie-monster"></div>
+        <div className='hookie-monster'></div>
       </section>
-      <section className="middle">
+      <section className='middle'>
         <p>i yearn for cookies... please feed me...</p>
         <button
           onClick={() => {
             setCookiesAte(cookiesAte + 1);
           }}
-          className="cookie"
+          className='cookie'
         ></button>
       </section>
       {showRecipe && <CookieRecipe recipe={recipe} />}

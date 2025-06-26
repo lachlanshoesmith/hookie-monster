@@ -3,13 +3,13 @@ import '../App.css';
 function Level1() {
   return (
     <>
-      <section className="left">
+      <section className='left'>
         <p>hookie monster is malnourished</p>
-        <div className="cookie-monster"></div>
+        <div className='hookie-monster'></div>
       </section>
-      <section className="middle">
+      <section className='middle'>
         <p>i yearn for cookies... please feed me...</p>
-        <button className="cookie"></button>
+        <button className='cookie'></button>
       </section>
     </>
   );

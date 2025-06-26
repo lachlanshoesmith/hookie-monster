@@ -2,12 +2,26 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  let level = parseInt(useLocation().pathname.slice(-1)) - 1;
-  if (!level) {
-    level = 0;
-  }
+  const level = parseInt(useLocation().pathname.slice(-1));
 
   const levels = [
+    {
+      features: [
+        'None! As of now, everything in this app could be easily implemented without a line of React, let alone JavaScript.',
+      ],
+      todos: [
+        "The left side of the screen is looking rather plain. Let's put Hookie Monster and a cookie over there.",
+        <span>
+          Apply these classes to the containers: <code>.left</code>,{' '}
+          <code>.middle</code>
+        </span>,
+        <span>
+          Apply these classes to the items within each:{' '}
+          <code>.hookie-monster</code>, <code>.cookie</code>
+        </span>,
+        'The cookie itself will need to be clickable. Hookie Monster does not need to be clickable.',
+      ],
+    },
     {
       features: [
         'None! As of now, everything in this app could be easily implemented without a line of React, let alone JavaScript.',
@@ -91,7 +105,7 @@ function App() {
   return (
     <>
       <Outlet />
-      <main className="right">
+      <main className='right'>
         <article>
           <section>
             <h1>Hookie Monster</h1>
@@ -114,10 +128,10 @@ function App() {
             </ul>
           </section>
         </article>
-        <section className="levels">
+        <section className='levels'>
           {levels.map((_, i) => (
             <Link
-              to={`level${i + 1}`}
+              to={`level${i}`}
               key={i}
               className={i === level ? 'active level-link' : 'level-link'}
             />
